@@ -3,7 +3,7 @@
 const readline = require('readline');
 const fs = require('fs');
 const mongoose = require('mongoose');
-const Professor = require('./schema');
+const Voters = require('./schema');
 
 // Console configuration
 const user = readline.createInterface({
