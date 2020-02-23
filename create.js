@@ -2,7 +2,6 @@
 
 const readline = require('readline');
 const fs = require('fs');
-const csv = require('csv-parser');
 const mongoose = require('mongoose');
 const Professor = require('./schema');
 
