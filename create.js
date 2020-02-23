@@ -2,6 +2,9 @@
 
 const readline = require('readline');
 const fs = require('fs');
+const csv = require('csv-parser');
+const mongoose = require('mongoose');
+const Professor = require('./schema');
 
 // Console configuration
 const user = readline.createInterface({
@@ -19,11 +22,11 @@ user.question('Filename: ', function(filename) {
 
   // Asynchronous line-by-line input
   file.on('line', function(line) {
-    console.log(line[0])
+    console.log(line);
   });
 
-  // End the program when the file closes
-  file.on('close', function() {
-    process.exit(0);
-  });
+  // // End the program when the file closes
+  // file.on('close', function() {
+  //   process.exit(0);
+  // });
 });
