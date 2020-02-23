@@ -24,8 +24,8 @@ user.question('Filename: ', function(filename) {
     console.log(line[0]);
   });
 
-  // // End the program when the file closes
-  // file.on('close', function() {
-  //   process.exit(0);
-  // });
+  // End the program when the file closes
+  file.on('close', function() {
+    process.exit(0);
+  });
 });
