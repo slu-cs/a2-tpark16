@@ -6,11 +6,11 @@ const Voters = require('./schema');
 connect(); // To the database
 
 const query = [
-    Voters.find().where('zipcode').equals(13617),
-    Voters.find().where('first_name').equals("STARR"),
+    Voters.find().where('zipCode').equals(13617),
+    Voters.find().where('firstName').equals("STARR"),
     Voters.where('history').in('GE16').count(),
-    Voters.find().sort("-last_name").limit(1),
-    Voters.distinct('zipcode')
+    Voters.find().sort("-lastName").limit(1),
+    Voters.distinct('zipCode')
 ];
 
 // Run the queries in parallel
