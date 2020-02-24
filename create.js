@@ -12,7 +12,7 @@ let voter = [];
 
 // File configuration
 const file = readline.createInterface({
-  input: fs.createReadStream(filename)
+  input: fs.createReadStream('voters.csv')
 });
 
 // Asynchronous line-by-line input
