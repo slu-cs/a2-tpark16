@@ -35,10 +35,8 @@ user.question('Filename: ', function(filename) {
     }));
   });
 
-  console.log(value);
-
   mongoose.connection.dropDatabase()
-    .then(() => value.save())
+    .then(() => voter.save())
     .then(() => mongoose.connection.close())
     .then(() => console.log('Database is ready.'))
     .catch(error => console.error(error.stack));
