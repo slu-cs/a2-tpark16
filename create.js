@@ -5,6 +5,8 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const Voters = require('./schema');
 
+const collection = [];
+
 // Console configuration
 const user = readline.createInterface({
   input: process.stdin,
@@ -28,8 +30,10 @@ user.question('Filename: ', function(filename) {
       zipCode: splited_line[2],
       history: splited_line[3]
     })
-    console.log(value);
+    collection.push(value);
   });
+
+  console.log(collection);
 
   // End the program when the file closes
   file.on('close', function() {
