@@ -5,14 +5,18 @@ const Voters = require('./schema');
 
 connect(); // To the database
 
-const query = Voters.find();
+const query = [
+  Voters.find()
+];
 
-query.exec(function(error, voters) {
-  if (error) console.error(error.stack);
-  console.log(voters);
-});
+// query.exec(function(error, voters) {
+//   if (error) console.error(error.stack);
+//   console.log(voters);
+// });
 
-// Promise.all(queries)
-//   .then(function(results) {
-//     console.log(results[0]);
-//   }).catch(error => console.error(error.stack));
+// Run the queries in parallel
+Promise.all(queries)
+  .then(function(results) {
+    console.log('Names in order: ', results[0].map(p => p.name));
+    mongoose.connection.close();
+  }).catch(error => console.error(error.stack));
