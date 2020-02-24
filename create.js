@@ -14,6 +14,7 @@ const user = readline.createInterface({
   output: process.stdout
 });
 
+let voter = [];
 // Console input
 user.question('Filename: ', function(filename) {
 
@@ -26,12 +27,12 @@ user.question('Filename: ', function(filename) {
   // Asynchronous line-by-line input
   file.on('line', function(line) {
     var splited_line = line.split(/,/);
-    const value = new Voters({
+    voter.push(new Voters({
       firstName: splited_line[0],
       lastName: splited_line[1],
       zipCode: splited_line[2],
       history: splited_line[3]
-    });
+    }));
   });
 
   console.log(value);
