@@ -17,6 +17,6 @@ const query = [
 // Run the queries in parallel
 Promise.all(query)
   .then(function(results) {
-    console.log('Names in order: ', results[0].map(p => p.name));
+    console.log('Names in order: ', results[0]);
     mongoose.connection.close();
   }).catch(error => console.error(error.stack));
