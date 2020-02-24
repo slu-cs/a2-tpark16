@@ -32,6 +32,11 @@ user.question('Filename: ', function(filename) {
 
   });
 
+  mongoose.connection.dropDatabase()
+    .then(() => value.save())
+    .then(() => mongoose.connection.close())
+    .then(() => console.log('Database is ready.'))
+    .catch(error => console.error(error.stack));
 
   // End the program when the file closes
   file.on('close', function() {
