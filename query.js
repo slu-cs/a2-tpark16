@@ -1,6 +1,6 @@
 const Voters = require('./schema');
 
-const quries = [
+const queries = [
 
   Voters.find()
 ];
