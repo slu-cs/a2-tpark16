@@ -48,8 +48,8 @@ user.question('Filename: ', function(filename) {
   //   .then(() => console.log('Database is ready.'))
   //   .catch(error => console.error(error.stack));
 
-  // End the program when the file closes
-  file.on('close', function() {
-    process.exit(0);
-  });
+  // // End the program when the file closes
+  // file.on('close', function() {
+  //   process.exit(0);
+  // });
 });
