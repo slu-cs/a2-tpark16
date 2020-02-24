@@ -5,8 +5,6 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const Voters = require('./schema');
 
-const collection = [];
-
 // Console configuration
 const user = readline.createInterface({
   input: process.stdin,
@@ -15,6 +13,8 @@ const user = readline.createInterface({
 
 // Console input
 user.question('Filename: ', function(filename) {
+
+  const collection = [];
 
   // File configuration
   const file = readline.createInterface({
