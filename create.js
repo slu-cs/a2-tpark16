@@ -14,7 +14,6 @@ const user = readline.createInterface({
 // Console input
 user.question('Filename: ', function(filename) {
 
-  const collection = [];
 
   // File configuration
   const file = readline.createInterface({
@@ -30,10 +29,9 @@ user.question('Filename: ', function(filename) {
       zipCode: splited_line[2],
       history: splited_line[3]
     })
-    collection.push(value);
+
   });
 
-  console.log(collection);
 
   // End the program when the file closes
   file.on('close', function() {
