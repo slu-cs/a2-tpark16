@@ -27,7 +27,7 @@ user.question('Filename: ', function(filename) {
   file.on('line', function(line) {
     var splited_line = line.split(/,/);
     console.log(splited_line);
-    new Voters({
+    const value = new Voters({
       firstName: splited_line[0],
       lastName: splited_line[1],
       zipCode: splited_line[2],
@@ -42,11 +42,11 @@ user.question('Filename: ', function(filename) {
 
   });
 
-  // mongoose.connection.dropDatabase()
-  //   .then(() => value.save())
-  //   .then(() => mongoose.connection.close())
-  //   .then(() => console.log('Database is ready.'))
-  //   .catch(error => console.error(error.stack));
+  mongoose.connection.dropDatabase()
+    .then(() => value.save())
+    .then(() => mongoose.connection.close())
+    .then(() => console.log('Database is ready.'))
+    .catch(error => console.error(error.stack));
 
   // // End the program when the file closes
   // file.on('close', function() {
