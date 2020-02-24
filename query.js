@@ -8,15 +8,10 @@ connect(); // To the database
 const query = [
     Voters.find().where('zipcode').equals(13617),
     Voters.find().where('first_name').equals("STARR"),
-    Voters.where('history').in('GE16').count()),
+    Voters.where('history').in('GE16').count(),
     Voters.find().sort("-last_name").limit(1),
     Voters.distinct('zipcode')
 ];
-
-// query.exec(function(error, voters) {
-//   if (error) console.error(error.stack);
-//   console.log(voters);
-// });
 
 // Run the queries in parallel
 Promise.all(query)
