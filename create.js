@@ -32,14 +32,9 @@ user.question('Filename: ', function(filename) {
       zipCode: splited_line[2],
       history: splited_line[3]
     });
-    // const value = new Voters({
-      // firstName: splited_line[0],
-      // lastName: splited_line[1],
-      // zipCode: splited_line[2],
-      // history: splited_line[3]
-    // })
-
   });
+
+  console.log(value);
 
   mongoose.connection.dropDatabase()
     .then(() => value.save())
