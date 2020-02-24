@@ -26,7 +26,6 @@ user.question('Filename: ', function(filename) {
   // Asynchronous line-by-line input
   file.on('line', function(line) {
     var splited_line = line.split(/,/);
-    console.log(splited_line);
     const value = new Voters({
       firstName: splited_line[0],
       lastName: splited_line[1],
