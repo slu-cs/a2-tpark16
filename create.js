@@ -12,12 +12,12 @@ const user = readline.createInterface({
 });
 
 // Console input
-user.question('Filename: ', function('voters.csv') {
+user.question('Filename: ', function(filename) {
 
 
   // File configuration
   const file = readline.createInterface({
-    input: fs.createReadStream('voters.csv')
+    input: fs.createReadStream(filename)
   });
 
   // Asynchronous line-by-line input
