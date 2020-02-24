@@ -5,6 +5,7 @@ const Voters = require('./schema');
 
 connect(); // To the database
 
+// queries
 const query = [
     Voters.find().where('zipCode').equals(13617),
     Voters.find().where('firstName').equals("STARR"),

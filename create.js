@@ -8,6 +8,7 @@ const Voters = require('./schema');
 
 connect(); // To the database
 
+// make voter array so we can store data
 let voter = [];
 
 // File configuration
@@ -26,6 +27,7 @@ file.on('line', function(line) {
   }));
 });
 
+// reset the data
 mongoose.connection.dropDatabase()
   .then(() => Promise.all(voter.map(voter => voter.save())))
   .then(() => mongoose.connection.close())
