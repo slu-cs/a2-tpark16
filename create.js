@@ -3,7 +3,6 @@
 const readline = require('readline');
 const fs = require('fs');
 const mongoose = require('mongoose');
-const csvParser = require('csv-parser');
 const Voters = require('./schema');
 
 // Console configuration
@@ -22,8 +21,13 @@ user.question('Filename: ', function(filename) {
 
   // Asynchronous line-by-line input
   file.on('line', function(line) {
-    var line2 = line.split(/,/);
-    console.log(line2);
+    var splited_line = line.split(/,/);
+    const value = new Voters({
+      firstName: splited_line[0],
+      lastName: splited_line[1],
+      zipCode: splited_line[2],
+      history: splited_line[3]
+    })
   });
 
   // End the program when the file closes
