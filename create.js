@@ -28,6 +28,7 @@ user.question('Filename: ', function(filename) {
       zipCode: splited_line[2],
       history: splited_line[3]
     })
+    console.log(value);
   });
 
   // End the program when the file closes
