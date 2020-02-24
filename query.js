@@ -2,8 +2,8 @@ const Voters = require('./schema');
 
 const quries = [
 
-  Voters.find();
-]
+  Voters.find()
+];
 
 Promise.all(queries)
   .then(function(results) {
