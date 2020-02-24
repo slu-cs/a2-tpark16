@@ -27,11 +27,17 @@ user.question('Filename: ', function(filename) {
   file.on('line', function(line) {
     var splited_line = line.split(/,/);
     console.log(splited_line);
+    new Voters({
+      firstName: splited_line[0],
+      lastName: splited_line[1],
+      zipCode: splited_line[2],
+      history: splited_line[3]
+    });
     // const value = new Voters({
-    //   firstName: splited_line[0],
-    //   lastName: splited_line[1],
-    //   zipCode: splited_line[2],
-    //   history: splited_line[3]
+      // firstName: splited_line[0],
+      // lastName: splited_line[1],
+      // zipCode: splited_line[2],
+      // history: splited_line[3]
     // })
 
   });
