@@ -3,7 +3,10 @@
 const readline = require('readline');
 const fs = require('fs');
 const mongoose = require('mongoose');
+const connect = require('./db');
 const Voters = require('./schema');
+
+connect(); // To the database
 
 // Console configuration
 const user = readline.createInterface({
