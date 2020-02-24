@@ -4,6 +4,7 @@ const query = Voters.find();
 query.exec(function(error, voters) {
   if (error) console.error(error.stack);
   console.log(voters);
+  });
 
 // Promise.all(queries)
 //   .then(function(results) {
