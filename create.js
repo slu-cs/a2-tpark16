@@ -27,9 +27,11 @@ file.on('line', function(line) {
   }));
 });
 
+file.on('close', function() {
 // reset the data
 mongoose.connection.dropDatabase()
   .then(() => Promise.all(voter.map(voter => voter.save())))
   .then(() => mongoose.connection.close())
   .then(() => console.log('Database is ready.'))
   .catch(error => console.error(error.stack));
+});
